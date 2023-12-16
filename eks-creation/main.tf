@@ -6,10 +6,6 @@ locals {
   workstation-external-cidr = "${chomp(data.http.workstation-external-ip.body)}/32"
 }
 
-data "aws_subnet" "selected" {
-  id = var.subnet_id
-}
-
 data "aws_subnet_ids" "subnet_id" {
   vpc_id = var.vpc_id
 
